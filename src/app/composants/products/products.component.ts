@@ -15,6 +15,7 @@ export class ProductsComponent implements OnInit {
     this.getProducts();
   }
 
+  // Get all products
   getProducts(){
     this.productService.getProductsService().subscribe(data=>{
       this.products = data;
@@ -22,14 +23,16 @@ export class ProductsComponent implements OnInit {
     })
   }
 
+  // Delete a product by id ID
   deleted(id:any){
     this.productService.deleteProductService(id).subscribe(()=>{
-      this.getProducts();//Pour refresh direct la page après suppression
+      this.getProducts();//Get the new list of products
       this.display = true;
     }
     );
   }
 
+  // Change the attibut "available" of a product
   changeAvailablity(product: any) {
     this.productService.changeAvailablityService(product).subscribe(()=>{
       this.getProducts();
@@ -37,12 +40,14 @@ export class ProductsComponent implements OnInit {
     })
   }
 
+  // Filter products with min and max prices
   searchByRange(search: any) {
     this.productService.searchByRangeService(search.value).subscribe(data=>{
       this.products = data;
     })
   }
 
+  // Filter products with keyword
   searchByKeyword(search: any) {
     this.productService.searchByKeywordService(search.value).subscribe(data=>{
       this.products = data;
