@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="text-center text-warning mt-4 mb-4">List of our products : {{products.length}}</h1>
+    <h1 class="text-success mt-4 mb-4">List of our products : {{products.length}}</h1>
 
     <!-- Search zone -->
     <div class="row mb-4">
@@ -44,37 +44,16 @@
         </div>
     </div>
 
-    
-        <section class="row">
-            <!-- Delete message -->
-            <div class="text-center ml-4 mb-4 pl-4 pb-4 bg-success" *ngIf="display">Product has been deleted</div>
+
+    <section class="row">
+        <!-- Delete message -->
+        <div class="text-center ml-4 mb-4 pl-4 pb-4 bg-success" *ngIf="displayDelete">Product has been deleted</div>
+
+
+        <div class="row justify-content-center">
             <!-- Beggining display products -->
-
-            <div class="col-4" *ngFor="let p of products">
-                <!-- <div class="col-4" *ngFor="let p of products"> -->
-                <!-- <div class="card mw-25 mh-20">
-                <img src="{{p.picture}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{p.title}}</h5>
-                    <p class="card-text">{{p.description}}</p>
-                    <div class="row">
-                        <div class="col-4">
-                            <i class="available fa-regular"
-                                [ngClass]="{'text-success fa-thumbs-up': p.available, 'text-danger fa-thumbs-down': !p.available}"
-                                (click)="changeAvailablity(p)">
-                            </i>
-                        </div>
-                        <div class="col-4">
-                            <a href="#" class="btn btn-primary">{{p.price}}€/Kg</a>
-                        </div>
-                        <div class="col-4">
-                            <button (click)="deleted(p.id)">Delete</button>
-                        </div>
-                    </div>
-                </div> -->
-
-
-                <div class="card rounded mb-4 shadow"
+            <div class="col-4 row justify-content-center" *ngFor="let p of products">
+                <div class="card rounded mb-4"
                     [ngClass]="{'border-success': p.available, 'border-danger ': !p.available}" style="width: 18rem;">
                     <img class="card-img-top border-bottom"
                         [ngClass]="{'border-success': p.available, 'border-danger ': !p.available}" src="{{p.picture}}"
@@ -98,11 +77,30 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
             <!-- End display products -->
-        </section>
-    
+        </div>
+
+        <!-- Begging paging -->
+        <div class="row justify-content-center">
+            <div class="col-5 row">
+                <button class="rounded col-2" (click)="movePagination(-1)"><i class="fa-solid fa-chevron-left"></i><i
+                        class="fa-solid fa-chevron-left"></i></button>
+                <p class="col-10">Previous page</p>
+            </div>
+            <div class="col-2 text-center">
+                <p>Page {{pagination}}</p>
+            </div>
+            <div class="col-5 row">
+                <p class="col-10 text-end">Next page</p>
+                <button class="col-2 rounded" (click)="movePagination(1)">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        <!-- End paging -->
+    </section>
+
 
 </div>

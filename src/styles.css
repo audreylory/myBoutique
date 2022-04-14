@@ -1,11 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* body {
-    background-image: url('https://www.freepik.com/photos/grey-wood');
+body {
+    background-image: url('/assets/img/texture-background.jpg');
     background-size: cover;
     background-attachment: fixed;
-} */
+}
 
-body {
-    background-color: aquamarine;
+
+h1 {
+    background: radial-gradient(circle, rgba(201,204,204,1) 0%, rgba(235,240,241,0) 100%);
+    background: radial-gradient(circle, rgba(88,41,0,0.5749650201877626) 53%, rgba(246,242,242,0) 100%);
+    text-align: center;
 }

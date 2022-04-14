@@ -54,7 +54,7 @@
       "description": "Haec igitur Epicuri non probo, inquam. De cetero vellem equidem aut ipse doctrinis fuisset instructior est enim, quod tibi ita videri necesse est, non satis politus iis artibus, quas qui tenent, eruditi appellantur aut",
       "picture": "https://images.unsplash.com/photo-1615484477778-ca3b77940c25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
       "price": 42,
-      "available": false
+      "available": true
     },
     {
       "id": 11,

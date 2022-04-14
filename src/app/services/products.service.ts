@@ -13,6 +13,11 @@ export class ProductsService {
     return this.http.get("http://localhost:3000/products");
   }
 
+  //Get products with paging
+  getProductsPagService(number:number){
+    return this.http.get("http://localhost:3000/products?_page="+number+"&_limit=3");
+  }
+
   // Delete a product by is id
   deleteProductService(id:any){
     return this.http.delete("http://localhost:3000/products/"+id);
