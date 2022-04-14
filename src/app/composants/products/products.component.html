@@ -1,8 +1,7 @@
 <div class="container">
     <h1 class="text-center text-warning mt-4 mb-4">List of our products : {{products.length}}</h1>
 
-
-
+    <!-- Search zone -->
     <div class="row mb-4">
         <div class="col-6">
             <h6 class="text-info text-center">Search by price range</h6>
@@ -45,10 +44,15 @@
         </div>
     </div>
 
-    <section class="row">
-        <div class="text-center ml-4 mb-4 pl-4 pb-4 bg-success" *ngIf="display">Product has been deleted</div>
-        <div class="col-4" *ngFor="let p of products">
-            <div class="card mw-25 mh-20">
+    
+        <section class="row">
+            <!-- Delete message -->
+            <div class="text-center ml-4 mb-4 pl-4 pb-4 bg-success" *ngIf="display">Product has been deleted</div>
+            <!-- Beggining display products -->
+
+            <div class="col-4" *ngFor="let p of products">
+                <!-- <div class="col-4" *ngFor="let p of products"> -->
+                <!-- <div class="card mw-25 mh-20">
                 <img src="{{p.picture}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{p.title}}</h5>
@@ -67,9 +71,38 @@
                             <button (click)="deleted(p.id)">Delete</button>
                         </div>
                     </div>
+                </div> -->
+
+
+                <div class="card rounded mb-4 shadow"
+                    [ngClass]="{'border-success': p.available, 'border-danger ': !p.available}" style="width: 18rem;">
+                    <img class="card-img-top border-bottom"
+                        [ngClass]="{'border-success': p.available, 'border-danger ': !p.available}" src="{{p.picture}}"
+                        alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{p.title}}</h5>
+                        <p class="card-text">{{p.description}}</p>
+                        <div class="row ">
+                            <div class="col-4">
+                                <i class="available fa-regular"
+                                    [ngClass]="{'text-success fa-thumbs-up': p.available, 'text-danger fa-thumbs-down': !p.available}"
+                                    (click)="changeAvailability(p)">
+                                </i>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="btn btn-primary">{{p.price}}€/Kg</a>
+                            </div>
+                            <div class="col-4">
+                                <button (click)="deleted(p.id)">Delete</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-        </div>
-    </section>
+
+            <!-- End display products -->
+        </section>
+    
 
 </div>

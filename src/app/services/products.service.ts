@@ -24,7 +24,7 @@ export class ProductsService {
   }
 
   // Change attribut 'available' in the product
-  changeAvailablityService(product: any){
+  changeAvailabilityService(product: any){
     let isAvailable = product.available;
     return this.http.patch("http://localhost:3000/products/"+product.id, {available: !isAvailable});
 

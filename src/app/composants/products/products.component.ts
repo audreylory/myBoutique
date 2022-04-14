@@ -33,8 +33,8 @@ export class ProductsComponent implements OnInit {
   }
 
   // Change the attibut "available" of a product
-  changeAvailablity(product: any) {
-    this.productService.changeAvailablityService(product).subscribe(()=>{
+  changeAvailability(product: any) {
+    this.productService.changeAvailabilityService(product).subscribe(()=>{
       this.getProducts();
       console.log("change availability");
     })
