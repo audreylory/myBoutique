@@ -2,13 +2,20 @@
 
 body {
     background-image: url('/assets/img/texture-background.jpg');
+    background-image: url('/assets/img/grey-wood.jpg');
+    background-image: url('https://img.freepik.com/free-photo/white-wooden-table-background_53876-89436.jpg?t=st=1649965752~exp=1649966352~hmac=ea9ebdca6aede7a9ef03acab731fa9b41cf49e007ce33ae647016210e5be5e20&w=900');
+    background-image: url('https://media.istockphoto.com/photos/wood-empty-surface-and-living-room-as-background-in-the-evening-picture-id1205485141?b=1&k=20&m=1205485141&s=170667a&w=0&h=jAlLtRaLcYtS2HvL_PpbprUuSxp7U7Q5ism3-PGy2fo=');
+    background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNob3AlMjBuYXR1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60');
+    
     background-size: cover;
     background-attachment: fixed;
 }
 
 
 h1 {
-    background: radial-gradient(circle, rgba(201,204,204,1) 0%, rgba(235,240,241,0) 100%);
-    background: radial-gradient(circle, rgba(88,41,0,0.5749650201877626) 53%, rgba(246,242,242,0) 100%);
     text-align: center;
+}
+
+.nav {
+    background: radial-gradient(circle, rgba(201,204,204,1) 0%, rgba(235,240,241,0) 100%);
 }

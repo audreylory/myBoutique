@@ -8,3 +8,7 @@ i {
     height: 20vh;
     object-fit: scale-down;
 }
+
+.paging {
+    background: radial-gradient(circle, rgba(201,204,204,1) 0%, rgba(235,240,241,0) 100%);
+}

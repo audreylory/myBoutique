@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="text-success mt-4 mb-4">List of our products : {{products.length}}</h1>
+    <h1 class="text-info mt-4 mb-4">List of our products : {{products.length}}</h1>
 
     <!-- Search zone -->
     <div class="row mb-4">
@@ -44,14 +44,12 @@
         </div>
     </div>
 
-
     <section class="row">
         <!-- Delete message -->
         <div class="text-center ml-4 mb-4 pl-4 pb-4 bg-success" *ngIf="displayDelete">Product has been deleted</div>
 
-
+        <!-- Beggining display products -->
         <div class="row justify-content-center">
-            <!-- Beggining display products -->
             <div class="col-4 row justify-content-center" *ngFor="let p of products">
                 <div class="card rounded mb-4"
                     [ngClass]="{'border-success': p.available, 'border-danger ': !p.available}" style="width: 18rem;">
@@ -78,11 +76,11 @@
                     </div>
                 </div>
             </div>
-            <!-- End display products -->
         </div>
+        <!-- End display products -->
 
-        <!-- Begging paging -->
-        <div class="row justify-content-center">
+        <!-- Paging -->
+        <div class="paging row justify-content-center">
             <div class="col-5 row">
                 <button class="rounded col-2" (click)="movePagination(-1)"><i class="fa-solid fa-chevron-left"></i><i
                         class="fa-solid fa-chevron-left"></i></button>
@@ -99,7 +97,6 @@
                 </button>
             </div>
         </div>
-        <!-- End paging -->
     </section>
 
 
