@@ -1,0 +1,25 @@
+<div class="container">
+    <!-- My title -->
+    <h1 class="text-center text-info mt-4 mb-4">Add a product:</h1>
+    <!-- Form - Beggin -->
+    <form (ngSubmit)="addProduct(productForm)" #productForm="ngForm">
+        <div class="form-group">
+            <label>Product's name</label>
+            <input type="text" class="form-control" name="title" ngModel required placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label>Product's description</label>
+            <input type="text" class="form-control" name="description" ngModel required placeholder="Description">
+        </div>
+        <div class="form-group">
+            <label>Product's picture</label>
+            <input type="text" class="form-control" name="picture" ngModel required placeholder="Link">
+        </div>
+        <div class="form-group">
+            <label>Product's price</label>
+            <input type="number" class="form-control" name="price" ngModel required placeholder="Price">
+        </div>
+        <button type="submit" class="btn btn-primary">Add the product</button>
+    </form>
+    <!-- Form - End -->
+</div>

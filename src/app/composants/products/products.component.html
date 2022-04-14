@@ -1,0 +1,75 @@
+<div class="container">
+    <h1 class="text-center text-warning mt-4 mb-4">List of our products : {{products.length}}</h1>
+
+
+
+    <div class="row mb-4">
+        <div class="col-6">
+            <h6 class="text-info text-center">Search by price range</h6>
+            <!-- ********************** Beggin form price range ********************* -->
+            <form>
+                <div class="row justify-content-center">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Minimum price">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Maximum price">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </form>
+            <!-- *********************** End form price range ******************** -->
+        </div>
+        <div class="col-6">
+            <h6 class="text-info text-center">Search by keyword</h6>
+            <!-- ********************** Beggin form keyword ********************* -->
+            <form>
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Keyword">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </form>
+            <!-- *********************** End form keyword ******************** -->
+        </div>
+    </div>
+
+    <section class="row">
+        <div class="text-center ml-4 mb-4 pl-4 pb-4 bg-success" *ngIf="display">Product has been deleted</div>
+        <div class="col-4" *ngFor="let p of products">
+            <div class="card mw-25 mh-20">
+                <img src="{{p.picture}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{p.title}}</h5>
+                    <p class="card-text">{{p.description}}</p>
+                    <div class="row">
+                        <div class="col-4">
+                            <i class="available fa-regular"
+                                [ngClass]="{'text-success fa-thumbs-up': p.available, 'text-danger fa-thumbs-down': !p.available}"
+                                (click)="changeAvailablity(p)">
+                            </i>
+                        </div>
+                        <div class="col-4">
+                            <a href="#" class="btn btn-primary">{{p.price}}€/Kg</a>
+                        </div>
+                        <div class="col-4">
+                            <button (click)="deleted(p.id)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
