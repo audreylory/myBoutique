@@ -23,7 +23,6 @@ export class ProductsComponent implements OnInit {
   }
 
   deleted(id:any){
-    // console.log(id);
     this.productService.deleteProductService(id).subscribe(()=>{
       this.getProducts();//Pour refresh direct la page après suppression
       this.display = true;
@@ -35,6 +34,18 @@ export class ProductsComponent implements OnInit {
     this.productService.changeAvailablityService(product).subscribe(()=>{
       this.getProducts();
       console.log("change availability");
+    })
+  }
+
+  searchByRange(search: any) {
+    this.productService.searchByRangeService(search.value).subscribe(data=>{
+      this.products = data;
+    })
+  }
+
+  searchByKeyword(search: any) {
+    this.productService.searchByKeywordService(search.value).subscribe(data=>{
+      this.products = data;
     })
   }
 

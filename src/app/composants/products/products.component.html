@@ -7,16 +7,16 @@
         <div class="col-6">
             <h6 class="text-info text-center">Search by price range</h6>
             <!-- ********************** Beggin form price range ********************* -->
-            <form>
+            <form (ngSubmit)="searchByRange(searchRangeForm)" #searchRangeForm="ngForm">
                 <div class="row justify-content-center">
                     <div class="col-4">
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Minimum price">
+                            <input type="number" class="form-control" name="min" ngModel placeholder="Minimum price">
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Maximum price">
+                            <input type="number" class="form-control" name="max" ngModel placeholder="Maximum price">
                         </div>
                     </div>
                     <div class="col-4">
@@ -29,11 +29,11 @@
         <div class="col-6">
             <h6 class="text-info text-center">Search by keyword</h6>
             <!-- ********************** Beggin form keyword ********************* -->
-            <form>
+            <form (ngSubmit)="searchByKeyword(searchKeywordForm)" #searchKeywordForm="ngForm">
                 <div class="row justify-content-center">
                     <div class="col-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Keyword">
+                            <input type="text" class="form-control" name="keyword" ngModel placeholder="Keyword">
                         </div>
                     </div>
                     <div class="col-4">

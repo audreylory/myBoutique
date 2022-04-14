@@ -32,4 +32,16 @@ export class ProductsService {
     return this.http.patch("http://localhost:3000/products/"+product.id, {available: !available});
 
   }
+
+  searchByRangeService(search:any){
+    let min = search.min;
+    let max = search.max;
+    return this.http.get("http://localhost:3000/products?price_gte=" + min + "&price_lte=" + max);
+  }
+
+  searchByKeywordService(search:any){
+    let keyword = search.keyword;
+    return this.http.get("http://localhost:3000/products?title_contains="+ keyword);
+  }
+
 }
