@@ -50,7 +50,8 @@ export class ProductsService {
 
   updateProductService(product: any){
     console.log("In service");
-    return this.http.patch("http://localhost:3000/products/" + product.id, product);
+    return this.http.put("http://localhost:3000/products/" + product.id, product);
+    //return this.http.patch("http://localhost:3000/products/" + product.id, product);
   }
 
 }
