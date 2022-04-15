@@ -70,12 +70,12 @@
                                 <a href="#" class="btn btn-primary">{{p.price}}€/Kg</a>
                             </div>
                             <div class="col-3">
-                                <button (click)="deleted(p.id)">Delete</button>
+                                <button (click)="deleted(p.id)" *ngIf="isAuth">Delete</button>
                             </div>
                             <div class="col-3">
                                 <!-- **************************** button modal update ******************************** -->
                                 <button type="button" class="btn btn-primary" data-toggle="modal"
-                                    data-target="#editProductModal" (click)="editProduct(p)"> Edit </button>
+                                    data-target="#editProductModal" (click)="editProduct(p)" *ngIf="isAuth"> Edit </button>
 
 
                             </div>

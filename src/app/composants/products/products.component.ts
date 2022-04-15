@@ -18,12 +18,16 @@ export class ProductsComponent implements OnInit {
     price: 0,
     available: false
   }
+  isAuth = this.productService.isAuthenticated;
 
   constructor(private productService: ProductsService) { }
+
+
 
   ngOnInit(): void {
     //this.getProducts();
     this.getProductsPag();
+    this.isAuth;
   }
 
   // Get all products
