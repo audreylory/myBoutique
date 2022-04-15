@@ -8,7 +8,6 @@ import { ProductsComponent } from './composants/products/products.component';
 import { HomePageComponent } from './composants/home-page/home-page.component';
 import { HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './composants/login/login.component';
-// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { LoginComponent } from './composants/login/login.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    // NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
