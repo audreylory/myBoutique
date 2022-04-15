@@ -1,19 +1,11 @@
 {
   "products": [
     {
-      "id": 1,
-      "title": "strawberry",
-      "description": "Quanta autem vis amicitiae sit, ex hoc intellegi maxime potest, quod ex infinita societate generis humani, quam conciliavit ipsa natura, ita contracta res est et adducta in angustum ut omnis caritas aut inter duos aut inter paucos iungeretur.",
-      "picture": "https://images.unsplash.com/photo-1568966299181-bb7282cc84f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8c3RyYXdiZXJyeXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
-      "price": 12,
-      "available": true
-    },
-    {
       "id": 2,
       "title": "Apple",
       "description": "Quanta autem vis amicitiae sit, ex hoc intellegi maxime potest, quod ex infinita societate generis humani, quam conciliavit ipsa natura, ita contracta res est et adducta in angustum ut omnis caritas aut inter duos aut inter paucos iungeretur.",
       "picture": "https://images.unsplash.com/photo-1619546813926-a78fa6372cd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGFwcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
-      "price": 20,
+      "price": 25,
       "available": true
     },
     {
@@ -78,7 +70,7 @@
       "description": "ubi autem in planitie potuerint reperiri, quod contingit adsidue, nec exsertare lacertos nec crispare permissi tela, quae vehunt bina vel terna, pecudum ritu inertium trucidantur.",
       "picture": "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
       "price": 15,
-      "available": true
+      "available": false
     },
     {
       "id": 14,

@@ -10,6 +10,15 @@ export class ProductsComponent implements OnInit {
   products: any;
   displayDelete: boolean = false;
   pagination: number = 1;
+  productEdit: any = {
+    id: "",
+    title: "",
+    description: "",
+    image: "",
+    price: 0,
+    available: false
+  }
+
   constructor(private productService: ProductsService) { }
 
   ngOnInit(): void {
@@ -75,6 +84,21 @@ export class ProductsComponent implements OnInit {
     this.productService.searchByKeywordService(search.value).subscribe(data => {
       this.products = data;
     })
+  }
+
+  // Edit a product
+  editProduct(product:any) {
+    this.productEdit = product;
+    console.log(this.productEdit);
+  }
+
+  //Update the product in BDD
+  updateProduct(){
+    console.log(this.productEdit);
+    this.productService.updateProductService(this.productEdit).subscribe(()=> {
+      console.log("Youpi");
+    })
+ 
   }
 
 

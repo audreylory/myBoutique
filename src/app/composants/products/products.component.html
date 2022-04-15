@@ -52,25 +52,32 @@
         <div class="row justify-content-center">
             <div class="col-4 row justify-content-center" *ngFor="let p of products">
                 <div class="card rounded mb-4"
-                    [ngClass]="{'border-success': p.available, 'border-danger ': !p.available}" style="width: 18rem;">
+                    [ngClass]="{'border-success': p.available, 'border-danger ': !p.available}" style="width: 25rem;">
                     <img class="card-img-top border-bottom"
                         [ngClass]="{'border-success': p.available, 'border-danger ': !p.available}" src="{{p.picture}}"
                         alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{p.title}}</h5>
                         <p class="card-text">{{p.description}}</p>
-                        <div class="row ">
-                            <div class="col-4">
+                        <div class="card-footer row">
+                            <div class="col-2">
                                 <i class="available fa-regular"
                                     [ngClass]="{'text-success fa-thumbs-up': p.available, 'text-danger fa-thumbs-down': !p.available}"
                                     (click)="changeAvailability(p)">
                                 </i>
                             </div>
-                            <div class="col-4">
+                            <div class="col-3">
                                 <a href="#" class="btn btn-primary">{{p.price}}€/Kg</a>
                             </div>
-                            <div class="col-4">
+                            <div class="col-3">
                                 <button (click)="deleted(p.id)">Delete</button>
+                            </div>
+                            <div class="col-3">
+                                <!-- **************************** button modal update ******************************** -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#editProductModal" (click)="editProduct(p)"> Edit </button>
+
+
                             </div>
                         </div>
                     </div>
@@ -97,6 +104,57 @@
                 </button>
             </div>
         </div>
+
+        <!-- **************************** Beging modal update ******************************** -->
+        <div class="modal fade" id="editProductModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update product</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- ***************** Begin Form ***************** -->
+                        <form>
+                            <div class="form-group">
+                                <label>Product's name</label>
+                                <input type="text" class="form-control" [(ngModel)]="productEdit.title" name="title"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label>Product's description</label>
+                                <input type="text" class="form-control" [(ngModel)]="productEdit.description"
+                                    name="description" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Product's picture</label>
+                                <input type="text" class="form-control" [(ngModel)]="productEdit.picture" name="picture"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label>Product's price</label>
+                                <input type="number" class="form-control" [(ngModel)]="productEdit.price" name="price"
+                                    required>
+                            </div>
+                        </form>
+
+                        <!-- ****************** End Form ****************** -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button (click)="updateProduct()" type="button" class="btn btn-primary"
+                            data-dismiss="modal">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***************************** End modal update ********************************* -->
+
+
+
     </section>
 
 

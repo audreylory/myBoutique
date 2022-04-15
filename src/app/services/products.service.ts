@@ -48,4 +48,9 @@ export class ProductsService {
     return this.http.get("http://localhost:3000/products?q="+ keyword);
   }
 
+  updateProductService(product: any){
+    console.log("In service");
+    return this.http.patch("http://localhost:3000/products/" + product.id, product);
+  }
+
 }
